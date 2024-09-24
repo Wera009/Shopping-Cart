@@ -1,5 +1,4 @@
 import { useRef } from "react";
-
 import CartModal from "./cartModal";
 
 export default function Header({ cart, onUpdateCartItemQuantity }) {
@@ -22,6 +21,9 @@ export default function Header({ cart, onUpdateCartItemQuantity }) {
     );
   }
 
+  // Reference the logo from the public directory
+  const logo = process.env.PUBLIC_URL + '/logo.png';
+
   return (
     <>
       <CartModal
@@ -33,7 +35,7 @@ export default function Header({ cart, onUpdateCartItemQuantity }) {
       />
       <header id="main-header">
         <div id="main-title">
-          <img src="logo.png" alt="Elegant model" />
+          <img src={logo} alt="Elegant model" />
           <h1>Elegant Context</h1>
         </div>
         <p>
@@ -43,3 +45,5 @@ export default function Header({ cart, onUpdateCartItemQuantity }) {
     </>
   );
 }
+
+
